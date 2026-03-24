@@ -121,21 +121,27 @@ export default function NewsPage() {
                 className="w-full h-full"
               />
             </div>
-            <div className="aspect-video rounded-xl overflow-hidden shadow-md bg-charcoal/5 flex items-center justify-center">
-              <p className="text-muted text-sm">More videos coming soon</p>
+            <div className="aspect-video rounded-xl overflow-hidden shadow-md">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/gcC30ootNUI"
+                title="Ganga Pooja at Gangotri"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
             </div>
-            <div className="aspect-video rounded-xl overflow-hidden shadow-md bg-charcoal/5 flex items-center justify-center">
-              <p className="text-muted text-sm">
-                Visit our{" "}
-                <a
-                  href="https://www.youtube.com/channel/UC61_Xalv8nGcTcGf_qTcxmw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gold-dark hover:underline"
-                >
-                  YouTube channel
-                </a>
-              </p>
+            <div className="aspect-video rounded-xl overflow-hidden shadow-md">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/xjxMv79femo"
+                title="Gangotri Dham"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
             </div>
           </div>
         </div>

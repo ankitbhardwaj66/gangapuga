@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaOm, FaHandsHelping, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { FaOm, FaHandsHelping, FaPhoneAlt } from "react-icons/fa";
 import { GiLotus, GiTempleDoor } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
 import Diya from "@/components/Diya";
@@ -58,16 +58,6 @@ export default function HomePage() {
         <div className="absolute bottom-4 right-8 sm:right-16 z-10 opacity-90" style={{ animationDelay: "0.8s" }}>
           <Diya />
         </div>
-        {/* WhatsApp button centered between diyas on mobile */}
-        <a
-          href="https://api.whatsapp.com/send?phone=919920813556&text=Jai%20Ganga%20Maiya"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all md:hidden"
-        >
-          <FaWhatsapp size={24} />
-        </a>
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 opacity-70 hidden lg:block" style={{ animationDelay: "1.1s" }}>
           <div className="flex gap-40">
             <Diya />

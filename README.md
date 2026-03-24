@@ -1,61 +1,125 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Gangapuja.org
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Web platform for online Ganga Puja services — book poojas, make donations, and stay connected with daily activities and news.
 
-## About Laravel
+**Live:** [https://gangapuja.org](https://gangapuja.org)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Framework:** Laravel 7.24 (PHP 7.2+)
+- **Admin Panel:** Voyager 1.4 (CMS with BREAD interface)
+- **Payments:** Razorpay (INR)
+- **Database:** MySQL
+- **Frontend:** jQuery, Bootstrap grid, FancyBox, WOW.js, Parallax
+- **Build:** Laravel Mix + Webpack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Pages & Routes
 
-## Learning Laravel
+| Route | Page |
+|-------|------|
+| `/` | Homepage — banners, testimonials, featured content |
+| `/about` | About & Pooja services listing with prices |
+| `/services` | Daily scheduled activities with times & instructors |
+| `/news` | News, events, and video content |
+| `/donate` | Donation form with Razorpay payment |
+| `/contact` | Contact form with reCAPTCHA v3 |
+| `/pay` | Razorpay order creation & checkout |
+| `/success` | Payment confirmation |
+| `/admin` | Voyager admin panel |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Models
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Model | Purpose |
+|-------|---------|
+| Content | Dynamic page content managed via admin |
+| Donation | Donor info, amount, Razorpay order ID, payment status |
+| Activity | Daily scheduled activities (time, name, instructor) |
+| Pooja | Puja services with name and price |
+| News | News/event articles |
+| Video | Embedded video content |
+| Gallery | Image gallery items |
+| Meta | Per-page SEO metadata (title, keywords, description) |
 
-## Laravel Sponsors
+## Key Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Donations** — Two-step flow: form submission → Razorpay payment → confirmation email
+- **Contact Form** — Google reCAPTCHA v3 verified, sends email to admin
+- **Admin Panel** — Voyager CMS for managing all content, settings, users, and media
+- **Dynamic Content** — Page content, settings, and SEO metadata editable from admin
+- **WhatsApp Integration** — Floating contact button
+- **Google Analytics** — Tracking enabled (UA-164275863-1)
 
-### Premium Partners
+## Project Structure
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```
+app/
+├── Http/Controllers/GangaController.php   # All frontend logic
+├── Mail/ContactForm.php                   # Contact form email
+├── Mail/DonationThanks.php                # Donation confirmation email
+├── Activity.php, Content.php, Donation.php, Gallery.php,
+│   Meta.php, News.php, Pooja.php, Video.php   # Eloquent models
+resources/views/
+├── layouts/ganga.blade.php                # Main layout
+├── index.blade.php                        # Homepage
+├── services.blade.php                     # About/Pooja services
+├── activities.blade.php                   # Daily activities
+├── donate.blade.php                       # Donation form
+├── contact.blade.php                      # Contact form
+├── pay.blade.php                          # Razorpay checkout
+├── success.blade.php                      # Payment confirmation
+public/ganga/
+├── css/                                   # Stylesheets
+├── js/                                    # jQuery plugins & scripts
+├── images/                                # Parallax backgrounds & content images
+```
 
-## Contributing
+## Setup
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Install dependencies
+composer install
+npm install
 
-## Code of Conduct
+# Configure environment
+cp .env.example .env
+php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Set up database
+php artisan migrate
+php artisan db:seed
 
-## Security Vulnerabilities
+# Link storage
+php artisan storage:link
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Run locally
+php artisan serve
+```
 
-## License
+### Environment Variables
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Key variables to configure in `.env`:
+
+```
+APP_URL=https://gangapuja.org
+DB_DATABASE=gangapuja
+DB_USERNAME=
+DB_PASSWORD=
+MAIL_MAILER=smtp
+MAIL_HOST=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+```
+
+Razorpay and reCAPTCHA credentials are configured in the controller and `config/services.php`.
+
+## Deployment
+
+Hosted on Hostinger. The `public/` directory maps to the domain's `public_html/`.
+
+## Admin Access
+
+Navigate to `/admin` and log in with Voyager credentials. From the admin panel you can manage:
+- Site settings (logo, contact info, page content)
+- Donations and payment records
+- News, activities, poojas, gallery, and videos
+- Users and roles

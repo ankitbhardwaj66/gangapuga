@@ -1,4 +1,0 @@
-  RewriteCond %{HTTP_HOST} ^gangapuja.org$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^www.gangapuja.org$
-  RewriteCond %{REQUEST_URI} !public/
-  RewriteRule (.*) public/$1 [L]

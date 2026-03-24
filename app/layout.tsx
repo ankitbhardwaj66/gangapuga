@@ -18,6 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gangapuja.org"),
   title: "Gangapuja — Online Ganga Puja Services from Gangotri",
   description:
     "Book authentic Ganga Puja ceremonies performed at the sacred origin of the Ganges in Gangotri. Online puja booking, donations, and spiritual services.",
@@ -29,14 +30,31 @@ export const metadata: Metadata = {
     "Ganga Aarti",
     "Gangotri Puja",
     "Donate",
+    "Gangotri Dham",
+    "Ganga Pooja Online",
   ],
+  alternates: {
+    canonical: "https://gangapuja.org/",
+  },
   openGraph: {
     type: "website",
     url: "https://gangapuja.org",
     title: "Gangapuja — Online Ganga Puja Services from Gangotri",
     description:
       "Book authentic Ganga Puja ceremonies performed at the sacred origin of the Ganges in Gangotri.",
-    images: [{ url: "/images/header-bg.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/header-bg.jpg", width: 1200, height: 630, alt: "Gangotri Dham" }],
+    siteName: "Gangapuja",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gangapuja — Online Ganga Puja Services from Gangotri",
+    description:
+      "Book authentic Ganga Puja ceremonies performed at the sacred origin of the Ganges in Gangotri.",
+    images: ["/images/header-bg.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

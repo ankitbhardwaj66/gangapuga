@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF0B3"/>
+      <stop offset="30%" stop-color="#E8B830"/>
+      <stop offset="60%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#DAA520"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFDD66" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FF9933" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Glow -->
+  <ellipse cx="32" cy="24" rx="20" ry="22" fill="url(#glow)"/>
+  <!-- Flame outer -->
+  <path d="M32 6 C26 18, 24 22, 24 28 C24 32.4, 27.6 36, 32 36 C36.4 36, 40 32.4, 40 28 C40 22, 38 18, 32 6Z" fill="#FF9933"/>
+  <!-- Flame inner -->
+  <path d="M32 14 C29 22, 28 25, 28 29 C28 31.2, 29.8 33, 32 33 C34.2 33, 36 31.2, 36 29 C36 25, 35 22, 32 14Z" fill="#FFDD66"/>
+  <!-- Flame core -->
+  <path d="M32 20 C30.5 25, 30 27, 30 29.5 C30 30.9, 30.9 32, 32 32 C33.1 32, 34 30.9, 34 29.5 C34 27, 33.5 25, 32 20Z" fill="#FFFDE8"/>
+  <!-- Wick -->
+  <rect x="31" y="34" width="2" height="4" rx="0.5" fill="#4A3728"/>
+  <!-- Lamp bowl -->
+  <path d="M16 38 L48 38 C48 38, 46 50, 32 50 C18 50, 16 38, 16 38Z" fill="url(#g)" stroke="#A0722A" stroke-width="0.5"/>
+  <!-- Oil shimmer -->
+  <path d="M18 40 C22 39, 28 41, 32 39.5 C36 41, 42 39, 46 40 L45 42 C41 41, 37 43, 32 41.5 C27 43, 23 41, 19 42Z" fill="#FFE066" opacity="0.4"/>
+  <!-- Lamp lip -->
+  <rect x="14" y="36" width="36" height="4" rx="2" fill="url(#g)" stroke="#A0722A" stroke-width="0.5"/>
+  <!-- Bright edge on lip -->
+  <rect x="14" y="36" width="36" height="1.5" rx="1" fill="#FFF5CC" opacity="0.5"/>
+  <!-- Base -->
+  <path d="M24 50 L40 50 L38 56 L26 56Z" fill="url(#g)" stroke="#A0722A" stroke-width="0.5"/>
+  <!-- Base bottom -->
+  <rect x="22" y="55" width="20" height="4" rx="2" fill="url(#g)" stroke="#A0722A" stroke-width="0.5"/>
+  <rect x="22" y="55" width="20" height="1.5" rx="1" fill="#FFF5CC" opacity="0.4"/>
+</svg>

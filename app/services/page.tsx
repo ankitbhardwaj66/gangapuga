@@ -8,6 +8,21 @@ export const metadata: Metadata = {
   title: "Services — Pooja & Rituals at Gangotri | Gangapuja",
   description:
     "Book Ganga Aarti, Ganga Pooja, Ganga Abhishek, Hawan, Pitru Tarpan, Katha services, and Dosh Nivaran Pooja performed by pandits at Gangotri Dham.",
+  keywords: ["Ganga Aarti", "Ganga Pooja", "Ganga Abhishek", "Hawan", "Pitru Tarpan", "Dosh Nivaran", "Gangotri services"],
+  alternates: { canonical: "https://gangapuja.org/services/" },
+  openGraph: {
+    type: "website",
+    url: "https://gangapuja.org/services/",
+    title: "Services — Pooja & Rituals at Gangotri | Gangapuja",
+    description: "Book Ganga Aarti, Ganga Pooja, Ganga Abhishek, Hawan, Pitru Tarpan, and Dosh Nivaran Pooja at Gangotri Dham.",
+    images: [{ url: "/images/parallax4.jpg", width: 1200, height: 630, alt: "Pooja at Gangotri" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services — Pooja & Rituals at Gangotri | Gangapuja",
+    description: "Book Ganga Aarti, Ganga Pooja, Ganga Abhishek, Hawan, Pitru Tarpan, and Dosh Nivaran Pooja at Gangotri Dham.",
+    images: ["/images/parallax4.jpg"],
+  },
 };
 
 const POOJAS = [

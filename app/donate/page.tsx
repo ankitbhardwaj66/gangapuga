@@ -8,6 +8,21 @@ export const metadata: Metadata = {
   title: "Donate — Support Ganga Seva at Gangotri | Gangapuja",
   description:
     "Donate to support Anna Daan (community kitchen), Vidya Daan (girl child education), and ongoing Ganga Pooja services at Gangotri Dham.",
+  keywords: ["Donate Gangotri", "Anna Daan", "Vidya Daan", "Ganga Seva", "Charity Gangotri"],
+  alternates: { canonical: "https://gangapuja.org/donate/" },
+  openGraph: {
+    type: "website",
+    url: "https://gangapuja.org/donate/",
+    title: "Donate — Support Ganga Seva at Gangotri | Gangapuja",
+    description: "Donate to support Anna Daan, Vidya Daan, and Ganga Pooja services at Gangotri Dham.",
+    images: [{ url: "/images/parallax3.jpg", width: 1200, height: 630, alt: "Support Ganga Seva" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Donate — Support Ganga Seva at Gangotri | Gangapuja",
+    description: "Donate to support Anna Daan, Vidya Daan, and Ganga Pooja services at Gangotri Dham.",
+    images: ["/images/parallax3.jpg"],
+  },
 };
 
 export default function DonatePage() {

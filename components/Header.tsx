@@ -27,7 +27,7 @@ export default function Header() {
             <span className="font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-bold text-gold-dark tracking-tight">
               गंगापूजा
             </span>
-            <span className="hidden sm:inline text-xs text-muted uppercase tracking-[0.2em] border-l border-gold-light pl-3">
+            <span className="text-xs text-muted uppercase tracking-[0.2em] border-l border-gold-light pl-3">
               Gangotri
             </span>
           </Link>

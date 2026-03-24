@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   title: "About — Events & Festivals in Gangotri | Gangapuja",
   description:
     "Learn about Ganga Pooja ceremonies, festivals like Akshaya Tritiya and Ganga Dussehra, and the spiritual significance of Gangotri Dham.",
+  keywords: ["Gangotri festivals", "Akshaya Tritiya", "Ganga Dussehra", "Gangotri Dham", "Ganga Pooja"],
+  alternates: { canonical: "https://gangapuja.org/about/" },
+  openGraph: {
+    type: "website",
+    url: "https://gangapuja.org/about/",
+    title: "About — Events & Festivals in Gangotri | Gangapuja",
+    description: "Learn about Ganga Pooja ceremonies, festivals, and the spiritual significance of Gangotri Dham.",
+    images: [{ url: "/images/parallax2.jpg", width: 1200, height: 630, alt: "Gangotri Dham" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About — Events & Festivals in Gangotri | Gangapuja",
+    description: "Learn about Ganga Pooja ceremonies, festivals, and the spiritual significance of Gangotri Dham.",
+    images: ["/images/parallax2.jpg"],
+  },
 };
 
 const FESTIVALS = [

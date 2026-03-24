@@ -5,6 +5,21 @@ export const metadata: Metadata = {
   title: "News & Events — Latest from Gangotri | Gangapuja",
   description:
     "Stay updated with the latest news, events, and videos from Gangotri Dham. Shravan Mass Puja, Gaushala, and more.",
+  keywords: ["Gangotri news", "Gangotri events", "Shravan Mass Puja", "Gaushala Uttarkashi", "Ganga Aarti videos"],
+  alternates: { canonical: "https://gangapuja.org/news/" },
+  openGraph: {
+    type: "website",
+    url: "https://gangapuja.org/news/",
+    title: "News & Events — Latest from Gangotri | Gangapuja",
+    description: "Stay updated with the latest news, events, and videos from Gangotri Dham.",
+    images: [{ url: "/images/parallax5.jpg", width: 1200, height: 630, alt: "Gangotri Events" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "News & Events — Latest from Gangotri | Gangapuja",
+    description: "Stay updated with the latest news, events, and videos from Gangotri Dham.",
+    images: ["/images/parallax5.jpg"],
+  },
 };
 
 const NEWS = [

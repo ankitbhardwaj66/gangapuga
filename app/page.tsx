@@ -3,6 +3,8 @@ import Image from "next/image";
 import { FaOm, FaHandsHelping, FaPhoneAlt } from "react-icons/fa";
 import { GiLotus, GiTempleDoor } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
+import Diya from "@/components/Diya";
+import Swastik from "@/components/Swastik";
 
 const SERVICES = [
   {
@@ -39,7 +41,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────── */}
-      <section className="relative h-[85vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative flex items-center justify-center py-16 pb-20 sm:py-24 sm:pb-24 overflow-visible">
         <Image
           src="/images/header-bg.jpg"
           alt="Gangotri Temple"
@@ -48,9 +50,27 @@ export default function HomePage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+
+        {/* Diyas */}
+        <div className="absolute bottom-4 left-8 sm:left-16 z-10 opacity-90" style={{ animationDelay: "0.5s" }}>
+          <Diya />
+        </div>
+        <div className="absolute bottom-4 right-8 sm:right-16 z-10 opacity-90" style={{ animationDelay: "0.8s" }}>
+          <Diya />
+        </div>
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 opacity-70 hidden lg:block" style={{ animationDelay: "1.1s" }}>
+          <div className="flex gap-40">
+            <Diya />
+            <Diya />
+          </div>
+        </div>
+
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <p className="text-gold-light text-sm sm:text-base tracking-[0.3em] uppercase mb-4 animate-fade-in-up">
-            ॐ नमो गंगायै
+          <div className="mb-5 animate-fade-in-up flex justify-center">
+            <Swastik className="w-24 h-24 sm:w-28 sm:h-28 drop-shadow-[0_0_15px_rgba(255,200,50,0.4)]" />
+          </div>
+          <p className="text-gold-light text-sm sm:text-base tracking-[0.3em] uppercase mb-3 animate-fade-in-up">
+            ॐ नमो गंगायै विश्वरूपिण्यै नारायण्यै नमो नमः
           </p>
           <h1
             className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up"
@@ -87,7 +107,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Trust Bar ──────────────────────────────────── */}
-      <section className="bg-cream-dark border-y border-gold-light/40">
+      <section className="bg-cream-dark border-y border-gold-light/40 relative z-20 mt-10">
         <div className="max-w-5xl mx-auto px-4 py-5 flex flex-wrap justify-center gap-6 sm:gap-10">
           {TRUST_ITEMS.map(({ icon, text }) => (
             <div key={text} className="flex items-center gap-2 text-sm text-muted">

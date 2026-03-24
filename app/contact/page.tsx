@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   title: "Contact — Get in Touch | Gangapuja",
   description:
     "Contact Jagat Kalyan Seva Samiti for Ganga Pooja bookings, donations, and enquiries. Located at Gangotri Dham, Dehradun.",
+  keywords: ["Contact Gangapuja", "Gangotri Pooja booking", "Jagat Kalyan Seva Samiti", "Gangotri contact"],
+  alternates: { canonical: "https://gangapuja.org/contact/" },
+  openGraph: {
+    type: "website",
+    url: "https://gangapuja.org/contact/",
+    title: "Contact — Get in Touch | Gangapuja",
+    description: "Contact Jagat Kalyan Seva Samiti for Ganga Pooja bookings, donations, and enquiries.",
+    images: [{ url: "/images/parallax7.jpg", width: 1200, height: 630, alt: "Contact Gangapuja" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — Get in Touch | Gangapuja",
+    description: "Contact Jagat Kalyan Seva Samiti for Ganga Pooja bookings, donations, and enquiries.",
+    images: ["/images/parallax7.jpg"],
+  },
 };
 
 const CONTACT_METHODS = [

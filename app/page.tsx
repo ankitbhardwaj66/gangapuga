@@ -107,7 +107,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Trust Bar ──────────────────────────────────── */}
-      <section className="bg-cream-dark border-y border-gold-light/40 relative z-20 mt-10">
+      <section className="bg-cream-dark border-y border-gold-light/40 relative z-20">
         <div className="max-w-5xl mx-auto px-4 py-5 flex flex-wrap justify-center gap-6 sm:gap-10">
           {TRUST_ITEMS.map(({ icon, text }) => (
             <div key={text} className="flex items-center gap-2 text-sm text-muted">

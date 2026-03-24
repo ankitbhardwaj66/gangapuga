@@ -17,12 +17,21 @@ Online Ganga Pooja services from Gangotri Dham. Book authentic puja ceremonies p
 
 | Route | Page |
 |-------|------|
-| `/` | Homepage — hero, services, mission, video, donation CTA |
+| `/` | Homepage — swastik, diyas, hero, services, mission, video, donation CTA |
 | `/about` | Gangotri story, festivals (Akshaya Tritiya, Ganga Dussehra, Diwali) |
 | `/services` | Pooja rituals, kathas, dosh nivaran, daily schedule, seva initiatives |
 | `/news` | News articles, event updates, videos |
 | `/donate` | Donation causes, preset amounts, bank transfer details |
 | `/contact` | Contact form, phone, email, address |
+
+## Features
+
+- Animated glowing diyas and 3D gold SVG swastik in hero section
+- SVG diya favicon
+- Full SEO meta tags on all pages (OG, Twitter, canonical, keywords)
+- Mobile-first responsive design with hamburger menu
+- Floating WhatsApp contact button
+- Sacred Modern design system (gold #B8860B / maroon #8B1A1A / cream #FDF8F0)
 
 ## Setup
 
@@ -61,12 +70,15 @@ app/
 ├── news/page.tsx         # News & videos
 ├── donate/page.tsx       # Donation page
 ├── contact/page.tsx      # Contact form
-├── layout.tsx            # Root layout
-├── globals.css           # Tailwind + custom styles
+├── layout.tsx            # Root layout (fonts, meta, header/footer)
+├── globals.css           # Tailwind + diya/swastik animations
+├── icon.svg              # Diya favicon
 components/
 ├── Header.tsx            # Sticky nav with mobile menu
-├── Footer.tsx            # Contact, links, bank details
+├── Footer.tsx            # Contact, links, bank details, credits
 ├── WhatsAppWidget.tsx    # Floating WhatsApp button
+├── Diya.tsx              # Animated oil lamp component
+├── Swastik.tsx           # 3D gold SVG swastik component
 public/images/            # Site images
 laravel-backup/           # Old Laravel project (archived)
 ```

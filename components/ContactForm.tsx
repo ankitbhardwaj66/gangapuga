@@ -2,9 +2,6 @@
 
 import { useState, FormEvent } from "react";
 
-// Get your free access key at https://web3forms.com — enter magangapuja@gmail.com
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
-
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
@@ -14,17 +11,18 @@ export default function ContactForm() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("access_key", WEB3FORMS_KEY);
-    data.append("subject", "New enquiry from gangapuja.org");
-    data.append("from_name", "Gangapuja Website");
+    data.append("_subject", "New enquiry from gangapuja.org");
+    data.append("_captcha", "false");
+    data.append("_template", "table");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://formsubmit.co/ajax/magangapuja@gmail.com", {
         method: "POST",
+        headers: { Accept: "application/json" },
         body: data,
       });
       const json = await res.json();
-      if (json.success) {
+      if (json.success === "true" || json.success === true) {
         setStatus("success");
         form.reset();
       } else {

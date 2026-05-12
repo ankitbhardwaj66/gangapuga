@@ -5,6 +5,7 @@ import { GiLotus, GiTempleDoor } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
 import Diya from "@/components/Diya";
 import Swastik from "@/components/Swastik";
+import VideoPlayer from "@/components/VideoPlayer";
 
 const SERVICES = [
   {
@@ -224,15 +225,7 @@ export default function HomePage() {
       <section className="py-16 sm:py-24 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/gcC30ootNUI"
-              title="Gangotri Puja"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
+            <VideoPlayer videoId="gcC30ootNUI" title="Gangotri Puja — Ganga Aarti" />
           </div>
           <div>
             <p className="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-3">

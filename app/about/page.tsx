@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gangapuja.org/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://gangapuja.org/about/" },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "About — Events & Festivals in Gangotri | Gangapuja",
   description:
@@ -50,6 +59,7 @@ const FESTIVALS = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {/* Hero */}
       <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
         <Image src="/images/parallax2.jpg" alt="" fill className="object-cover" />

@@ -117,12 +117,37 @@ const SEVA = [
   },
 ];
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gangapuja.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://gangapuja.org/services/" },
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": POOJAS.map(({ title, description }, i) => ({
+    "@type": "Service",
+    "@id": `https://gangapuja.org/services/#${title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-")}`,
+    "name": title,
+    "description": description,
+    "provider": { "@id": "https://gangapuja.org/#organization" },
+    "serviceType": "Religious Ceremony",
+    "areaServed": { "@type": "Country", "name": "India" },
+    "url": "https://gangapuja.org/services/",
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {/* Hero */}
       <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
-        <Image src="/images/parallax4.jpg" alt="" fill className="object-cover" />
+        <Image src="/images/parallax4.jpg" alt="" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-charcoal/70" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-gold-light uppercase tracking-[0.2em] text-sm mb-3">Our Services</p>

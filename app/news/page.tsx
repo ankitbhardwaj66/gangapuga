@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gangapuja.org/" },
+    { "@type": "ListItem", "position": 2, "name": "News & Events", "item": "https://gangapuja.org/news/" },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "News & Events — Latest from Gangotri | Gangapuja",
   description:
@@ -49,6 +58,7 @@ const NEWS = [
 export default function NewsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {/* Hero */}
       <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
         <Image src="/images/parallax5.jpg" alt="" fill className="object-cover" />

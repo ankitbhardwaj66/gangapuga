@@ -4,6 +4,15 @@ import Link from "next/link";
 import { FaPrayingHands } from "react-icons/fa";
 import { GiBookCover } from "react-icons/gi";
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gangapuja.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://gangapuja.org/donate/" },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Donate — Support Ganga Seva at Gangotri | Gangapuja",
   description:
@@ -28,6 +37,7 @@ export const metadata: Metadata = {
 export default function DonatePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {/* Hero */}
       <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
         <Image src="/images/parallax3.jpg" alt="" fill className="object-cover" />
@@ -97,12 +107,15 @@ export default function DonatePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {[101, 251, 501, 1100, 2100, 5100, 11000, 21000].map((amt) => (
-              <button
+              <a
                 key={amt}
-                className="px-6 py-3 text-base font-semibold text-white border-2 border-white/30 rounded-full hover:bg-white hover:text-maroon transition-all cursor-pointer"
+                href={`https://api.whatsapp.com/send?phone=919920813556&text=Jai%20Ganga%20Maiya.%20I%20would%20like%20to%20donate%20%E2%82%B9${amt}.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 text-base font-semibold text-white border-2 border-white/30 rounded-full hover:bg-white hover:text-maroon transition-all"
               >
                 ₹{amt.toLocaleString("en-IN")}
-              </button>
+              </a>
             ))}
           </div>
           <p className="text-cream-dark/50 text-sm mb-6">

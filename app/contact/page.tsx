@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact — Get in Touch | Gangapuja",
@@ -52,9 +53,19 @@ const CONTACT_METHODS = [
   },
 ];
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gangapuja.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://gangapuja.org/contact/" },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {/* Hero */}
       <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
         <Image src="/images/parallax7.jpg" alt="" fill className="object-cover" />
@@ -132,72 +143,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gold-light/30 shadow-sm">
-              <h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-charcoal mb-6">
-                Send us a Message
-              </h3>
-              <form className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-1.5">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 text-sm border border-gold-light/50 rounded-lg bg-cream/30 text-charcoal placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-1.5">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-4 py-3 text-sm border border-gold-light/50 rounded-lg bg-cream/30 text-charcoal placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-charcoal mb-1.5">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      className="w-full px-4 py-3 text-sm border border-gold-light/50 rounded-lg bg-cream/30 text-charcoal placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors"
-                      placeholder="+91 XXXXX XXXXX"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1.5">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 text-sm border border-gold-light/50 rounded-lg bg-cream/30 text-charcoal placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors resize-none"
-                    placeholder="Tell us about the pooja you'd like to book, or any questions..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-gold to-gold-dark rounded-full hover:shadow-lg hover:shadow-gold/20 transition-all cursor-pointer"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
